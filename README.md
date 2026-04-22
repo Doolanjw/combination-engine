@@ -1,72 +1,103 @@
-# The Combination Engine
+﻿# The Combination Engine
 
-**A manuscript on patents, AI, and combinatorial innovation**
+> Most innovation is recombination, not invention from scratch. The barrier is not a shortage of ideas — it is a shortage of visibility across domains.
 
----
+Bernard Sadow spent forty years watching people carry heavy luggage before attaching wheels to a suitcase in 1970. The wheel had existed for five thousand years. So had the suitcase. The gap was not technology. It was a failure to see two existing things together.
 
-## What This Is
-
-*The Combination Engine* is a practical framework for using AI and the public patent record to discover non-obvious innovation opportunities — combinations of existing solutions that no one has yet connected.
-
-The core argument: most innovation is recombination, not invention from scratch. The barrier is not a shortage of ideas. It is a shortage of visibility across domains. AI and the patent corpus, used together, can close that gap.
-
-This manuscript is written for entrepreneurs, engineers, product teams, and anyone who needs to solve a problem that has probably already been partially solved — somewhere else, under a different name, in a field they have never read.
+This repository is the companion to *The Combination Engine* — a manuscript on using AI and the public patent record to find non-obvious innovation opportunities: combinations of existing solutions that no one has yet connected.
 
 ---
 
-## Structure
+## What's Here
 
-| Chapter | Topic |
-|---|---|
-| 1 | Why Nothing Is Truly New — the combinatorial nature of innovation |
-| 2 | What a Patent Actually Is — anatomy, structure, and why patents beat papers |
-| 3 | The Problem With Human Pattern Recognition — silos, bandwidth, vocabulary |
-| 4 | How AI Reads the Patent Record — embeddings, semantic search, cross-domain matching |
-| 5 | TRIZ: What the Soviets Figured Out Decades Early — structured contradiction analysis |
-| 6 | Expired Patents and Dormant Ideas — public domain opportunity mapping |
-| 7 | Real Examples — worked case studies across industries |
-| 8 | The Tools Available Today — current AI and patent search landscape |
-| 9 | Where This Goes Next — near-term implications for innovation practice |
-| Appendix A | Getting Started — a practical four-week roadmap and worksheet |
-| Appendix B | Glossary of Key Terms |
+| Directory | Contents |
+|-----------|----------|
+| [`manuscript/`](./manuscript/) | Full manuscript — patents, AI, and combinatorial innovation |
+| [`prompts/`](./prompts/) | Five-step prompt library for structured cross-domain patent search |
+| [`examples/`](./examples/) | Worked case studies applying the framework end-to-end |
+| [`tools/`](./tools/) | Python CLI that walks through the five-step method |
 
 ---
 
-## Core Framework
+## The Five-Step Method
 
-The Combination Engine is not a product. It is a method:
+The Combination Engine is a method, not a product:
 
-1. **Define the friction point** — one sentence, no buzzwords
-2. **State the contradiction** — what must be simultaneously true for the problem to be solved
-3. **Search across domains** — who else has solved this structural tension, and under what vocabulary
-4. **Mine expired patents** — what was tried before that conditions now make viable
+1. **Define the friction point** — one sentence, no buzzwords, no solution embedded in the problem
+2. **State the contradiction** — what two things must simultaneously be true for the problem to be solved, but currently cannot be
+3. **Search across domains** — who else resolved this structural tension, under what vocabulary, in what decade
+4. **Mine expired patents** — what was tried before that current conditions might now make viable
 5. **Filter hard** — what would kill any candidate solution quickly
 
-AI handles the search breadth. You handle the judgment.
+AI handles search breadth. You handle judgment.
 
 ---
 
-## How to Use This
+## Quick Start
 
-**As a reader:** Work through it sequentially. Chapters 1–3 build the diagnostic case; Chapters 4–6 introduce the method; Chapters 7–9 apply and extend it.
+### Use the prompts directly
 
-**As a practitioner:** Jump to Appendix A for the four-week roadmap and the worksheet. Use the AI prompt template there as a starting structure for your own searches.
+Copy any prompt from [`prompts/`](./prompts/) into ChatGPT, Claude, or any capable LLM. The prompts are designed to work with the public-facing version of any model.
 
-**As a researcher or team:** Chapter 5 (TRIZ) and Chapter 4 (semantic embedding) are the most technically dense. Chapter 8 maps the current tool landscape.
+### Run the CLI tool
+
+```bash
+pip install -r tools/requirements.txt
+python tools/combination_engine.py
+```
+
+Single step:
+
+```bash
+python tools/combination_engine.py \
+  --step friction \
+  --input "field sensors drain batteries in 6 months but need 5-year deployment" \
+  --domain "industrial IoT"
+```
+
+With Anthropic API (optional — the tool works without it):
+
+```bash
+export ANTHROPIC_API_KEY=your_key_here
+python tools/combination_engine.py --auto --output session.json
+```
 
 ---
 
-## A Note on Claims and Sources
+## Read the Examples First
 
-This manuscript presents a practical argument, not an academic one. Where historical or empirical claims appear, they are offered as illustrations rather than citable propositions. Readers who want to go deeper on specific claims — associational thinking research, TRIZ methodology, semantic embedding architectures, patent classification systems — will find the relevant literature through any standard academic database.
+If the method is new to you, start with the examples before the prompts:
 
-The framework itself is offered as a working method, not a proven theory. Use it, test it, and adapt it to your problem.
+- [Bullet Train / Kingfisher](./examples/bullet-train-kingfisher.md) — geometry transfer from a diving bird to rail infrastructure
+- [Halicin / Antibiotic Discovery](./examples/halicin-antibiotic.md) — AI-assisted cross-domain compound reassignment
+- [Clinic Waiting Room](./examples/clinic-waiting-room.md) — full five-step walkthrough from problem to filtered candidates
 
 ---
 
-## File
+## The Manuscript
 
-- [`The_Combination_Engine.docx`](./2026-04-21-combination-engine-github-ready.docx) — full manuscript with tracked editorial revisions
+*The Combination Engine* covers:
+
+- The combinatorial nature of innovation, and why the lone-genius story is misleading
+- How patent documents work — anatomy, classifications, and why patents beat academic papers for cross-domain search
+- How AI reads the patent record — embeddings, semantic search, cross-domain matching, and what AI cannot do
+- TRIZ: what Soviet patent examiner Genrich Altshuller discovered about recurring patterns inside invention
+- Expired patents as public-domain opportunity — four conditions that make old ideas newly viable
+- Three worked case studies across pharma, rail, and medical devices
+- The tools available today (free and commercial), with honest assessments of each
+- Where this goes next — the obviousness paradox under AI, democratization, and what remains irreducibly human
+
+Full manuscript: [`manuscript/`](./manuscript/)
+
+---
+
+## Why This Matters
+
+The USPTO has issued more than eleven million patents, with hundreds of thousands added annually. The most valuable combinations sit between fields — and partial visibility across those fields is not enough.
+
+AI does not invent. It is a hypothesis machine: one that can search the archive more broadly and cross domains more systematically than any unaided human. The human driver's job is to recognize when an analogy is structural rather than verbal, test it against physics and economics, and decide which hypotheses deserve belief.
+
+The people best positioned to benefit will not necessarily be the ones with the biggest budgets or the most sophisticated tools. They will be the ones who combine machine breadth with human depth.
 
 ---
 
