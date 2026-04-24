@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Combination Engine — Free Resources</title>
+  <meta name="description" content="Download free prompt templates, innovation worksheets, and the five-step framework from The Combination Engine by Jonathan W. Doolan." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0f1f38;
+      --blue:   #1a3a6b;
+      --gold:   #c9a84c;
+      --light:  #f7f5f0;
+      --white:  #ffffff;
+      --gray:   #6b7280;
+      --border: #e0ddd6;
+      --text:   #1c1c1c;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    nav .logo {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+    }
+    nav a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      color: var(--white);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--gold);
+    }
+    .hero .eyebrow {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: normal;
+      line-height: 1.2;
+      max-width: 780px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero .cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border-radius: 3px;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-gold  { background: var(--gold); color: var(--navy); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); }
+
+    /* ── BOOK STRIP ── */
+    .book-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .book-strip .stat { font-family: 'Arial', sans-serif; }
+    .book-strip .stat .num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+    }
+    .book-strip .stat .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .book-strip .divider {
+      width: 1px; height: 40px;
+      background: var(--border);
+    }
+
+    /* ── MAIN ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+    section { padding: 4rem 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    p { margin-bottom: 1rem; color: #333; }
+
+    /* ── RESOURCES GRID ── */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.75rem 1.5rem;
+      position: relative;
+    }
+    .resource-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 4px 4px 0 0;
+    }
+    .resource-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .resource-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Arial', sans-serif;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .resource-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── FIVE STEPS ── */
+    .steps { margin-top: 2.5rem; counter-reset: step; }
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-body h3 {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .step-body p { font-size: 0.9rem; color: #444; margin: 0; }
+
+    /* ── QUOTE ── */
+    .pull-quote {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: 4px;
+      margin: 3rem 0 0;
+      text-align: center;
+    }
+    .pull-quote blockquote {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      line-height: 1.6;
+      font-style: italic;
+      max-width: 680px;
+      margin: 0 auto 1rem;
+    }
+    .pull-quote cite {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── DOWNLOAD FORM ── */
+    .download-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3rem 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .download-section h2 { margin-bottom: 0.75rem; }
+    .download-section p { color: var(--gray); font-size: 0.95rem; }
+    .form-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .form-row input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+      font-size: 0.95rem;
+      font-family: 'Arial', sans-serif;
+      color: var(--text);
+      background: var(--light);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-row input[type="email"]:focus { border-color: var(--navy); }
+    .form-row input[type="email"]::placeholder { color: #aaa; }
+    .form-privacy {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.75rem;
+    }
+
+    /* Direct download links (no email required) */
+    .direct-downloads {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .direct-downloads h3 {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+    .download-links { display: flex; flex-direction: column; gap: 0.6rem; }
+    .download-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.875rem;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .download-link:hover { color: var(--gold); }
+    .download-link .dl-icon { font-size: 1rem; }
+
+    /* ── AUTHOR ── */
+    .author-section {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .author-avatar {
+      flex-shrink: 0;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: 'Georgia', serif;
+      font-size: 1.8rem;
+    }
+    .author-body h2 { margin-bottom: 0.5rem; }
+    .author-body p { font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .book-strip .divider { display: none; }
+      .download-section { padding: 2rem 1.5rem; }
+      .pull-quote { padding: 2rem 1.5rem; }
+      section { padding: 3rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="logo">The Combination Engine</span>
+  <a href="https://github.com/Doolanjw/combination-engine">GitHub Repository →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="eyebrow">Free Resources from the Book</p>
+  <h1>Find the innovation hiding in plain sight — <em>with AI and the patent record.</em></h1>
+  <p>Download the prompt templates, worksheets, and five-step framework from <em>The Combination Engine</em> by Jonathan W. Doolan.</p>
+  <div class="cta-group">
+    <a href="#download" class="btn btn-gold">Get the Free Resources</a>
+    <a href="https://github.com/Doolanjw/combination-engine" class="btn btn-outline">View on GitHub</a>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="book-strip">
+  <div class="stat">
+    <span class="num">5</span>
+    <span class="label">Step Framework</span>
+  </div>
+  <div class="divider"></div>
+  <div class="stat">
+    <span class="num">29M+</span>
+    <span class="label">Patents Searchable</span>
+  </div>
+  <div class="divider"></div>
+  <div class="stat">
+    <span class="num">3</span>
+    <span class="label">Worked Case Studies</span>
+  </div>
+  <div class="divider"></div>
+  <div class="stat">
+    <span class="num">Free</span>
+    <span class="label">All Resources</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+  <div class="container">
+
+    <!-- WHAT YOU GET -->
+    <section id="resources">
+      <p class="section-sub">What's included</p>
+      <h2>Everything you need to run the engine</h2>
+      <p>These resources accompany the book and are designed to be used immediately — no prior patent experience required.</p>
+
+      <div class="resources-grid">
+        <div class="resource-card">
+          <span class="icon">🗂️</span>
+          <h3>AI Prompt Library</h3>
+          <p>Ready-to-use prompts for ChatGPT, Claude, and other LLMs — structured around the five-step method for cross-domain patent search.</p>
+        </div>
+        <div class="resource-card">
+          <span class="icon">📋</span>
+          <h3>Innovation Worksheet</h3>
+          <p>The six-question framework from the book, formatted as a printable one-pager you can work through on any problem in under an hour.</p>
+        </div>
+        <div class="resource-card">
+          <span class="icon">🗺️</span>
+          <h3>Getting Started Roadmap</h3>
+          <p>A week-by-week guide from Appendix A — learn the patent document, explore a landscape, and run your first search in three weeks.</p>
+        </div>
+        <div class="resource-card">
+          <span class="icon">⚙️</span>
+          <h3>Python CLI Tool</h3>
+          <p>A command-line tool for exploring the patent corpus computationally, with optional Anthropic API integration for semantic search.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE METHOD -->
+    <section id="method">
+      <p class="section-sub">The Framework</p>
+      <h2>The five-step Combination Engine method</h2>
+      <p>Most innovation is recombination, not invention from scratch. The barrier is not a shortage of ideas — it is a shortage of visibility across domains. This method gives you a repeatable process for closing that gap.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>Identify the Friction Point</h3>
+            <p>Articulate the problem clearly without embedding assumptions about what the solution must look like.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>Express the Contradiction</h3>
+            <p>Clarify which conditions must coexist but currently conflict. This is the move that opens cross-domain search.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>Cross-Domain Exploration</h3>
+            <p>Investigate how other industries resolved similar structural tensions. Use AI to search at a scale no human searcher can match.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>Investigate Expired Patents</h3>
+            <p>Examine past attempts that changing circumstances — new materials, new markets, new manufacturing — might now make viable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>Apply Rigorous Filtering</h3>
+            <p>Determine what legal, technical, commercial, or implementation obstacles would disqualify each candidate immediately.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pull-quote">
+        <blockquote>"The machine does not understand the world the way a human expert does. But it can search at a scale, across vocabularies, and over a breadth of classifications that no human can match."</blockquote>
+        <cite>— The Combination Engine</cite>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download">
+      <p class="section-sub">Free Download</p>
+      <h2>Get the complete resource pack</h2>
+
+      <div class="download-section">
+        <h2>Readers of the book</h2>
+        <p>Enter your email to receive the prompt templates, worksheet, and roadmap as a single PDF — plus occasional updates when new resources are added.</p>
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          onsubmit="handleSubmit(event)"
+        >
+          <div class="form-row">
+            <input type="email" name="email" placeholder="you@email.com" required />
+            <button type="submit" class="btn btn-gold">Send Me the Resources</button>
+          </div>
+          <p class="form-privacy">No spam. Unsubscribe any time. Your email is never sold or shared.</p>
+        </form>
+
+        <div class="direct-downloads">
+          <h3>Or download directly from GitHub</h3>
+          <div class="download-links">
+            <a class="download-link" href="https://github.com/Doolanjw/combination-engine/tree/main/prompts">
+              <span class="dl-icon">↓</span> AI Prompt Library (prompts/)
+            </a>
+            <a class="download-link" href="https://github.com/Doolanjw/combination-engine/tree/main/examples">
+              <span class="dl-icon">↓</span> Worked Case Studies (examples/)
+            </a>
+            <a class="download-link" href="https://github.com/Doolanjw/combination-engine/tree/main/tools">
+              <span class="dl-icon">↓</span> Python CLI Tool (tools/)
+            </a>
+            <a class="download-link" href="https://github.com/Doolanjw/combination-engine">
+              <span class="dl-icon">↓</span> Full Repository
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHOR -->
+    <section id="about">
+      <p class="section-sub">About the Author</p>
+      <div class="author-section">
+        <div class="author-avatar">JD</div>
+        <div class="author-body">
+          <h2>Jonathan W. Doolan</h2>
+          <p>Jonathan W. Doolan practiced law for twenty years before turning his focus to the intersection of artificial intelligence, intellectual property, and emerging technology. He holds certifications in AI for Business and AI in Azure Healthcare. He writes and consults from Knoxville, Tennessee.</p>
+          <p><em>The Combination Engine</em> is available on Amazon KDP.</p>
+          <a href="https://github.com/Doolanjw/combination-engine" class="btn btn-gold" style="margin-top:1rem; font-size:0.8rem;">View the GitHub Repository</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Jonathan W. Doolan &nbsp;·&nbsp; <a href="https://github.com/Doolanjw/combination-engine">GitHub</a> &nbsp;·&nbsp; All resources free to use under the terms in the repository.</p>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Form submission handler — replace Formspree ID or swap for your own service
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.querySelector('input[type="email"]').value;
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email })
+    })
+    .then(r => {
+      if (r.ok) {
+        form.innerHTML = '<p style="color:#1a3a6b;font-family:Arial,sans-serif;font-size:1rem;padding:1rem 0;">✓ Thanks — check your inbox. The resource pack is on its way.</p>';
+      } else {
+        alert('Something went wrong. Try downloading directly from GitHub above.');
+      }
+    })
+    .catch(() => alert('Could not connect. Try downloading directly from GitHub above.'));
+  }
+</script>
+
+</body>
+</html>

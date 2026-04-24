@@ -1,43 +1,58 @@
-﻿# The Combination Engine
+# The Combination Engine
 
-> Most innovation is recombination, not invention from scratch. The barrier is not a shortage of ideas — it is a shortage of visibility across domains.
+**How AI and the Patent Record Are Changing the Way We Discover Innovation**
 
-Bernard Sadow spent forty years watching people carry heavy luggage before attaching wheels to a suitcase in 1970. The wheel had existed for five thousand years. So had the suitcase. The gap was not technology. It was a failure to see two existing things together.
-
-This repository is the companion to *The Combination Engine* — a manuscript on using AI and the public patent record to find non-obvious innovation opportunities: combinations of existing solutions that no one has yet connected.
+*By Jonathan W. Doolan*
 
 ---
 
-## What's Here
+> "Most innovation is recombination, not invention from scratch. The barrier is not a shortage of ideas — it is a shortage of visibility across domains."
+
+---
+
+## The Book
+
+*The Combination Engine* is now available on Amazon:
+
+- [Kindle Edition](https://www.amazon.com/s?k=the+combination+engine+jonathan+doolan)
+- Paperback edition coming soon
+
+Free resources — prompt templates, worksheets, and tools — are available at:
+
+**[doolanjw.github.io/combination-engine](https://doolanjw.github.io/combination-engine)**
+
+---
+
+## What This Repository Contains
+
+This repository accompanies the book and provides everything referenced in the text as free downloads.
 
 | Directory | Contents |
 |-----------|----------|
-| [`manuscript/`](./manuscript/) | Full manuscript — patents, AI, and combinatorial innovation |
-| [`prompts/`](./prompts/) | Five-step prompt library for structured cross-domain patent search |
-| [`examples/`](./examples/) | Worked case studies applying the framework end-to-end |
-| [`tools/`](./tools/) | Python CLI that walks through the five-step method |
+| `prompts/` | Five-step prompt library for ChatGPT, Claude, and similar LLMs |
+| `examples/` | Worked case studies (Halicin antibiotic, bullet train, NuVasive) |
+| `tools/` | Python CLI implementing the five-step method |
+| `manuscript/` | Supporting manuscript content |
 
 ---
 
 ## The Five-Step Method
 
-The Combination Engine is a method, not a product:
+1. **Define the Friction Point** — Articulate one clear problem without embedding assumptions about solutions
+2. **State the Contradiction** — Identify two simultaneous requirements that currently conflict
+3. **Search Across Domains** — Find who resolved similar structural tensions using different vocabulary
+4. **Mine Expired Patents** — Examine historical solutions now potentially viable under changed conditions
+5. **Filter Hard** — Apply rigorous tests to eliminate weak candidates before investing further
 
-1. **Define the friction point** — one sentence, no buzzwords, no solution embedded in the problem
-2. **State the contradiction** — what two things must simultaneously be true for the problem to be solved, but currently cannot be
-3. **Search across domains** — who else resolved this structural tension, under what vocabulary, in what decade
-4. **Mine expired patents** — what was tried before that current conditions might now make viable
-5. **Filter hard** — what would kill any candidate solution quickly
-
-AI handles search breadth. You handle judgment.
+This method pairs machine-driven search breadth with human judgment. The AI finds candidates. You decide which ones are real.
 
 ---
 
-## Quick Start
+## Getting Started
 
 ### Use the prompts directly
 
-Copy any prompt from [`prompts/`](./prompts/) into ChatGPT, Claude, or any capable LLM. The prompts are designed to work with the public-facing version of any model.
+Open any of the prompt files in `prompts/` and paste them into ChatGPT, Claude, or a comparable LLM. No setup required.
 
 ### Run the CLI tool
 
@@ -46,59 +61,27 @@ pip install -r tools/requirements.txt
 python tools/combination_engine.py
 ```
 
-Single step:
-
-```bash
-python tools/combination_engine.py \
-  --step friction \
-  --input "field sensors drain batteries in 6 months but need 5-year deployment" \
-  --domain "industrial IoT"
-```
-
-With Anthropic API (optional — the tool works without it):
-
-```bash
-export ANTHROPIC_API_KEY=your_key_here
-python tools/combination_engine.py --auto --output session.json
-```
+Start with the example case studies in `examples/` before diving into the prompts if you are new to this methodology.
 
 ---
 
-## Read the Examples First
+## Key Resources Referenced in the Book
 
-If the method is new to you, start with the examples before the prompts:
-
-- [Bullet Train / Kingfisher](./examples/bullet-train-kingfisher.md) — geometry transfer from a diving bird to rail infrastructure
-- [Halicin / Antibiotic Discovery](./examples/halicin-antibiotic.md) — AI-assisted cross-domain compound reassignment
-- [Clinic Waiting Room](./examples/clinic-waiting-room.md) — full five-step walkthrough from problem to filtered candidates
-
----
-
-## The Manuscript
-
-*The Combination Engine* covers:
-
-- The combinatorial nature of innovation, and why the lone-genius story is misleading
-- How patent documents work — anatomy, classifications, and why patents beat academic papers for cross-domain search
-- How AI reads the patent record — embeddings, semantic search, cross-domain matching, and what AI cannot do
-- TRIZ: what Soviet patent examiner Genrich Altshuller discovered about recurring patterns inside invention
-- Expired patents as public-domain opportunity — four conditions that make old ideas newly viable
-- Three worked case studies across pharma, rail, and medical devices
-- The tools available today (free and commercial), with honest assessments of each
-- Where this goes next — the obviousness paradox under AI, democratization, and what remains irreducibly human
-
-Full manuscript: [`manuscript/`](./manuscript/)
+- [Google Patents](https://patents.google.com) — Free, full-text patent search
+- [Lens.org](https://lens.org) — Open patent and scholarly search
+- [USPTO Patent Full-Text Database](https://patents.google.com/?assignee=USPTO) — Official US patent records
+- [Semantic Scholar](https://www.semanticscholar.org) — AI-powered academic search
 
 ---
 
-## Why This Matters
+## About the Author
 
-The USPTO has issued more than eleven million patents, with hundreds of thousands added annually. The most valuable combinations sit between fields — and partial visibility across those fields is not enough.
-
-AI does not invent. It is a hypothesis machine: one that can search the archive more broadly and cross domains more systematically than any unaided human. The human driver's job is to recognize when an analogy is structural rather than verbal, test it against physics and economics, and decide which hypotheses deserve belief.
-
-The people best positioned to benefit will not necessarily be the ones with the biggest budgets or the most sophisticated tools. They will be the ones who combine machine breadth with human depth.
+Jonathan W. Doolan practiced law for twenty years before turning his focus to the intersection of artificial intelligence, intellectual property, and emerging technology. He holds certifications in AI for Business and AI in Azure Healthcare. He writes and consults from Knoxville, Tennessee.
 
 ---
 
-*Jonathan Doolan, 2026*
+## License
+
+The code and tools in this repository are released under the MIT License. See [LICENSE](LICENSE) for details.
+
+The written content (prompts, examples, and manuscript material) is © 2026 Jonathan W. Doolan. Free to use for personal and educational purposes.
